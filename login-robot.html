@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="stylelogin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon (1).ico" type="image/x-icon">
+    
+</head>
+<body>
+    <div class="page">
+        <form method="POST" class="formLogin">
+            <h1>Login</h1>
+            <p>Enter your access details in the field below.</p>
+            <label for="email">E-mail</label>
+            <input type="email" placeholder="Enter your e-mail" autofocus="true" />
+            <label for="password">Password</label>
+            <input type="password" placeholder="Enter your password" />
+            <a href="/">Remember password</a>
+            <input type="submit" value="Acess" class="btn" />
+        </form>
+    </div>
+    <img src="Pixel_Robot.gif" class="robot" id="pixel-robot">
+    <div class="speech-balloon" id="speech-balloon"></div>
+    <img src="robotpixel.png" class="robot-icon">
+    <script>
+        const pixelRobot = document.getElementById('pixel-robot');
+
+pixelRobot.addEventListener('mouseover', () => {
+  pixelRobot.style.transform = 'scale(1.2)'; 
+});
+
+pixelRobot.addEventListener('mouseout', () => {
+  pixelRobot.style.transform = 'scale(1)'; 
+});
+window.addEventListener('load', () => {
+const pixelRobot = document.getElementById('pixel-robot');
+const speechBalloon = document.getElementById('speech-balloon');
+
+pixelRobot.addEventListener('mouseover', () => {
+
+speechBalloon.style.display = 'block';
+});
+
+pixelRobot.addEventListener('mouseout', () => {
+
+speechBalloon.style.display = 'none';
+});
+});
+const apiUrl = 'https://api.chucknorris.io/jokes/random';
+
+const speechBalloon = document.getElementById('speech-balloon');
+
+const fetchChuckNorrisJoke = async () => {
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    
+    speechBalloon.textContent = data.value;
+
+    speechBalloon.style.display = 'block';
+  } catch (error) {
+    console.error('Erro ao obter piada do Chuck Norris:', error);
+  }
+};
+
+pixelRobot.addEventListener('mouseover', fetchChuckNorrisJoke);
+
+pixelRobot.addEventListener('mouseout', () => {
+  speechBalloon.style.display = 'none';
+});
+    </script>
+</body>
+</html>

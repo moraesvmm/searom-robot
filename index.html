@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Um bot que irá moderar e deixar a sua comunidade segura de um jeito fácil!">
+  <title>Searom Bot</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon (1).ico" type="image/x-icon">
+</head>
+
+<body>
+  <header class="cabecalho">
+    <nav class="menu">
+      <a class="menu-item" href="https://www.linkedin.com/in/vitor-moraes-1492a52a1/" target="_blank">Creator</a>
+      <a class="menu-item">Tutorial</a>
+      <a class="menu-item">Support</a>
+      <a class="menu-item">Comand</a>
+    </nav>
+    <a href="login-robot.html" target="_blank"><input type="button" value="Login" class="loginbutton"></a>
+  </header>
+
+  <main class="conteudo">
+    <section class="conteudo-principal">
+      <div class="conteudo-principal-escrito">
+        <h1 class="conteudo-principal-escrito-titulo">Searom Bot</h1>
+        <h2 class="conteudo-principal-escrito-subtitulo">Allow your community to have a healthier and more optimized web <br>experience!</h2>
+        <button class="conteudo-principal-escrito-botao">Add me!</button>
+      </div>
+      <img src="Pixel_Robot.gif" id="pixel-robot" class="conteudo-principal-imagem">
+      <div class="speech-balloon" id="speech-balloon">Hello! I'm Searom Bot and I can help you in your activities on community!</div>
+    </section>
+
+    <section class="conteudo-secundario">
+      <h3 class="conteudo-secundario-titulo">What does he do for you?</h3>
+      <p class="conteudo-secundario-paragrafo">1. Searom Bot <strong>implements a captcha system</strong> to verify that its new members are not robots;
+      <p class="conteudo-secundario-paragrafo">2. Helps moderate content and <strong>prevent cyber violence from occurring</strong> in your community;</p>
+      <p class="conteudo-secundario-paragrafo">3. Provides <strong>basic support to community</strong> members by answering frequently asked questions and providing guidance on using the platform;</p>
+      <p class="conteudo-secundario-paragrafo">4. <strong>Warning systems;</strong></p>
+      
+    </section>
+  </main>
+
+  <script>
+    const pixelRobot = document.getElementById('pixel-robot');
+
+    pixelRobot.addEventListener('mouseover', () => {
+      pixelRobot.style.transform = 'scaleX(-1.2)'; 
+    });
+
+    pixelRobot.addEventListener('mouseout', () => {
+      pixelRobot.style.transform = 'scaleX(-1)'; 
+    });
+    window.addEventListener('load', () => {
+  const pixelRobot = document.getElementById('pixel-robot');
+  const speechBalloon = document.getElementById('speech-balloon');
+
+  pixelRobot.addEventListener('mouseover', () => {
+    
+    speechBalloon.style.display = 'block';
+  });
+
+  pixelRobot.addEventListener('mouseout', () => {
+   
+    speechBalloon.style.display = 'none';
+  });
+});
+  </script>
+</body>
+
+</html>
